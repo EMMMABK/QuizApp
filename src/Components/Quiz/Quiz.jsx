@@ -52,6 +52,7 @@ const Quiz = () => {
     <div>
         <h1>Quiz App</h1>
         <hr />
+        {result?<></>:<>
         <h2>{index + 1}. {question.question}</h2>
         <ul>
             <li ref={Option1} onClick={(e)=>{checkAns(e,1)}}>{question.option1}</li>
@@ -60,7 +61,9 @@ const Quiz = () => {
             <li ref={Option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
         </ul>
         <button onClick={next}>Next</button>
-        <div className="index">{index+1} of {data.length} questions</div>
+        <div className="index">{index+1} of {data.length} questions</div></>}
+        <h2>You scored {score} out of {data.length}</h2>
+        <button>Reset</button>
     </div>
   )
 }
