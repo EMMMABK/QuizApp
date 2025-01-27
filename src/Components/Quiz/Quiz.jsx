@@ -31,6 +31,14 @@ const Quiz = () => {
             }
         }
     
+    const reset = () => {
+        setIndex(0);
+        setQuestion(data[0]);
+        setScore(0);
+        setLock(false);
+        setResult(false)
+    }
+
     const next = () => {
         if (lock===true){
             if (index === data.length - 1){
@@ -64,7 +72,7 @@ const Quiz = () => {
         <div className="index">{index+1} of {data.length} questions</div></>}
         {result?
         <><h2>You scored {score} out of {data.length}</h2>
-        <button>Reset</button></>:<></>}
+        <button onClick={reset}>Reset</button></>:<></>}
     </div>
   )
 }
