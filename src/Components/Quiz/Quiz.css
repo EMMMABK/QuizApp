@@ -1,9 +1,181 @@
-.correct{
-    background: #dffff2;
-    border-color: #00d397;
+/* Quiz.css */
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.wrong{
-    background: #FFEBEB;
-    border-color: #FF4A4A;
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px; /* added padding for small screens */
+}
+
+h1 {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid #e74c3c;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+/* Question and options */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+.correct {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.wrong {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Next button */
+button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Score and index display */
+.index {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.result {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+button:focus, li:focus {
+    outline: none;
+}
+
+/* Styles for when the quiz is completed */
+.result h2 {
+    font-size: 2.5rem;
+    color: #e74c3c;
+}
+
+.result button {
+    background-color: #3498db;
+    margin-top: 20px;
+}
+
+.result button:hover {
+    background-color: #2980b9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* smaller heading on tablets */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* smaller question font on tablets */
+    }
+
+    li {
+        width: 90%; /* make options take up more width on smaller screens */
+        padding: 12px 20px;
+    }
+
+    button {
+        padding: 10px 20px; /* adjust button size on smaller screens */
+    }
+
+    .index {
+        font-size: 1rem; /* smaller index font size */
+    }
+
+    .result h2 {
+        font-size: 2rem; /* smaller result font */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* even smaller heading on mobile */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* smaller question font on mobile */
+    }
+
+    li {
+        width: 100%; /* options take up full width on small mobile */
+        padding: 10px;
+        font-size: 1rem; /* smaller option font size */
+    }
+
+    button {
+        padding: 10px 15px; /* more compact button */
+    }
+
+    .index {
+        font-size: 0.9rem; /* smaller index font size */
+    }
+
+    .result h2 {
+        font-size: 1.8rem; /* smaller result font */
+    }
 }
