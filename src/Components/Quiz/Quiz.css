@@ -61,8 +61,8 @@ li {
     transition: all 0.3s ease;
 }
 
-li:hover {
-    background-color: #f1f1f1;
+li:active {
+    background-color: #f1f1f1; /* Light grey background on click */
 }
 
 .correct {
@@ -90,8 +90,8 @@ button {
     margin-right: auto;
 }
 
-button:hover {
-    background-color: #c0392b;
+button:active {
+    background-color: #c0392b; /* Darker red when clicked */
 }
 
 /* Score and index display */
@@ -122,6 +122,10 @@ button:focus, li:focus {
 .result button {
     background-color: #3498db;
     margin-top: 20px;
+}
+
+.result button:active {
+    background-color: #2980b9; /* Darker blue when clicked */
 }
 
 .result button:hover {
