@@ -19,7 +19,7 @@ const Quiz = () => {
 
     const checkAns = (e,ans) => {
         if (lock == false){
-                if (question.ans==ans){
+                if (question?.ans==ans){
                     e.target.classList.add("correct");
                     setLock(true);
                     setScore(prev=>prev+1);
@@ -33,7 +33,7 @@ const Quiz = () => {
     
     const next = () => {
         if (lock===true){
-            if (index === data.length){
+            if (index === data.length - 1){
                 setResult(true);
                 return 0; 
             }
@@ -62,8 +62,9 @@ const Quiz = () => {
         </ul>
         <button onClick={next}>Next</button>
         <div className="index">{index+1} of {data.length} questions</div></>}
-        <h2>You scored {score} out of {data.length}</h2>
-        <button>Reset</button>
+        {result?
+        <><h2>You scored {score} out of {data.length}</h2>
+        <button>Reset</button></>:<></>}
     </div>
   )
 }
